@@ -17,6 +17,13 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.TextureView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+
+import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,5 +31,59 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+        int index = 0;  //while loop for adding words
+        // String theword ="x";
+
+
+        ArrayList<String> words = new ArrayList<String>();
+        words.add("one");
+        words.add("two");
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+        words.add("ten");
+        words.add("eleven");
+
+        // iterate via "New way to loop"
+        // System.out.println("\n==> Advanced For Loop Example..");
+        // for (String theword : words) {
+         //   System.out.println(theword);
+        //    Log.d ( "Numbers Activity", theword) ;
+        // }
+        // Create a new Text view Called wordView using the rootView (i.e. this)
+
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // TextView wordView = new TextView(this);
+
+        // use a while loop to add text to the view
+        // while (index < words.size()) {
+        //    TextView wordView = new TextView(this); //create child view
+        //    wordView.setText(words.get(index)); //add text to child view
+        //    rootView.addView(wordView);  //add child view to the parent
+        //    index++;
+        // }
+
+        // use a for loop to add text to the view
+        for (index = 0; index < words.size(); index++){
+            TextView wordView = new TextView(this); //create child view
+            wordView.setText(words.get(index)); //add text to child view
+            rootView.addView(wordView);  //add child view to the parent
+        }
+
+        // wordView.setText(words.get(index));
+
+        // add wordView to the parent (rootView) view
+        // rootView.addView(wordView);
+       // index = words.size();
+        // what is this crap?
+
+
+
     }
 }
