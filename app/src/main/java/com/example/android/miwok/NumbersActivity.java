@@ -24,6 +24,8 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
+import android.widget.ArrayAdapter;  //new line added to support ArrayAdapter
+import android.widget.ListView;      //new line added to support ListView
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -58,7 +60,7 @@ public class NumbersActivity extends AppCompatActivity {
         // }
         // Create a new Text view Called wordView using the rootView (i.e. this)
 
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // sk removed for ArrayAdapter - LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
         // TextView wordView = new TextView(this);
 
         // use a while loop to add text to the view
@@ -69,19 +71,20 @@ public class NumbersActivity extends AppCompatActivity {
         //    index++;
         // }
 
-        // use a for loop to add text to the view
-        for (index = 0; index < words.size(); index++){
-            TextView wordView = new TextView(this); //create child view
-            wordView.setText(words.get(index)); //add text to child view
-            rootView.addView(wordView);  //add child view to the parent
-        }
+        // Use a for loop to add new text to the view
+        //for (index = 0; index < words.size(); index++){
+        //    TextView wordView = new TextView(this); //create child view
+        //    wordView.setText(words.get(index)); //add text to child view
+        //    rootView.addView(wordView);  //add child view to the parent
+        //}
 
-        // wordView.setText(words.get(index));
 
-        // add wordView to the parent (rootView) view
-        // rootView.addView(wordView);
-       // index = words.size();
-        // what is this crap?
+        // Replaced for loop above with an array adapter.  Don't use rootView
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(itemsAdapter);
 
 
 
