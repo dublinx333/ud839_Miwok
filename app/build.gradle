@@ -3,12 +3,14 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 23
+//  What sets the compileSdkVersion?
 
+    compileSdkVersion 27
+// What sets the targetSdkVersion?
     defaultConfig {
         applicationId "com.example.android.miwok"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -18,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+// What sets the buildToolsVersion?
     buildToolsVersion = '28.0.3'
 }
 
@@ -26,8 +29,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
 // sk Made changes to eliminate compiler warnings regarding 'implementation' vs 'compile'
-// sk    compile fileTree(dir: 'libs', include: ['*.jar'])
-    implementation fileTree(dir: 'libs', include: ['*.jar'])  //sk
+
 
 //sk    testCompile 'junit:junit:4.12'
     testImplementation 'junit:junit:4.12'  //sk
@@ -35,8 +37,20 @@ dependencies {
 //    compile 'com.android.support:appcompat-v7:23.3.0'
 //    compile 'com.android.support:support-v4:23.3.0'
 //    compile 'com.android.support:design:23.3.0'
-    implementation 'com.android.support:appcompat-v7:23.3.0' //sk
-    implementation 'com.android.support:support-v4:23.3.0'   //sk
-    implementation 'com.android.support:design:23.3.0'       //sk
+//    implementation 'com.android.support:appcompat-v7:23.3.0' //sk
+//    implementation 'com.android.support:support-v4:23.3.0'   //sk
+//    implementation 'com.android.support:design:23.3.0'       //sk
+// Upon upgrading to AS 3.3 and Gradle 4.1 i get support library issues (23) must be 26
+// Added the following to fix the issue
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+// Will finish uplaoding Oreo 8.0 and then attempt to fix
+//sk    compileOnly 'com.nostra13.universalimageloader:universal-image-loader:1.9.5' //sk
 
 }

@@ -29,6 +29,8 @@
     tools:context="com.example.android.miwok.NumbersActivity">
 
 </LinearLayout>
+// took the following line out of the element below and refactored activity_number.xml to word_list.xml
+// tools:context="com.example.android.miwok.NumbersActivity"
 -->
 
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,7 +43,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.miwok.NumbersActivity"/>
+    />
 
 <!-- replace list view with grid view
 <GridView xmlns:android="http://schemas.android.com/apk/res/android"

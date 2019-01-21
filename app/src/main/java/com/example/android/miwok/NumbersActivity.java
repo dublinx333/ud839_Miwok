@@ -17,16 +17,16 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.TextureView;
-import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.view.LayoutInflater;
+//import android.util.Log;
+//import android.view.TextureView;
+//import android.widget.GridView;
+//import android.widget.LinearLayout;
+//import android.widget.TextView;
+//import android.view.LayoutInflater;
 
 
 import java.util.ArrayList;
-import android.widget.ArrayAdapter;  //new line added to support ArrayAdapter
+//import android.widget.ArrayAdapter;  //new line added to support ArrayAdapter
 import android.widget.ListView;      //new line added to support ListView
 
 public class NumbersActivity extends AppCompatActivity {
@@ -35,12 +35,13 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /**
-         * Replace the activity_numbers layout with the new list_item layout
-         * etContentView(R.layout.activity_numbers);
+         * Replace the word_list layout with the new list_item layout
+         * etContentView(R.layout.word_list);
          * */
-        setContentView(R.layout.list_item);
-        int index = 0;  //while loop for adding words
-        // String theword ="x";
+//       setContentView(R.layout.list_item);// replace with line below after refactoring
+        setContentView(R.layout.word_list); // see word_list.xml (which has a id of "list"
+//        int index = 0;  //while loop for adding words
+//        String theword ="x";
 
 
         /** Replace code for using a string of words with code using
@@ -88,6 +89,14 @@ public class NumbersActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("one", "lutti"));
         words.add(new Word("two", "dutti"));
+        words.add(new Word("three", "tolookosu"));
+        words.add(new Word("four", "oyyisa"));
+        words.add(new Word("five", "massokka"));
+        words.add(new Word("six", "temmokka"));
+        words.add(new Word("seven", "kenekaku"));
+        words.add(new Word("eight", "kawinta"));
+        words.add(new Word("nine", "wo’e"));
+        words.add(new Word("ten", "na’aacha"));
 
 
         // Version 1: iterate via 'for loop
@@ -138,7 +147,7 @@ public class NumbersActivity extends AppCompatActivity {
         // based on our WorAdapter.java class which extended ArrayAdapter
 
 
-        // ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, android.R.layout.list_item, words);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      // ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, android.R.layout.list_item, words);
 
         // Create the a new WordAdapter object.
         // Make sure the constructor (in the WordAdapter.java file)
@@ -148,7 +157,7 @@ public class NumbersActivity extends AppCompatActivity {
         WordAdapter adapter = new WordAdapter(this, words);
 
         // Added the line below because I was getting a null reference
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
         ListView listView = (ListView) findViewById(R.id.list);
 
 
