@@ -8,7 +8,7 @@ buildscript {
     dependencies {
         // The original statement was: classpath 'com.android.tools.build:gradle:3.2.1'
         // Replaced it with line below to resolve gradle warnings about 'implementation' and 'api'
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.6.0-alpha09'
  //       classpath 'com.google.gms:google-services:3.2.1'   //steve new line to resolve 'implementation' vs 'compile' warnings
 
         // NOTE: Do not place your application dependencies here; they belong
