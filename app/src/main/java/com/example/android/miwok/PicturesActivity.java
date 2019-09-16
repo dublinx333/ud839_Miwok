@@ -1,7 +1,7 @@
 
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.ArrayList;
 import android.widget.ListView;      //new line added to support ListView

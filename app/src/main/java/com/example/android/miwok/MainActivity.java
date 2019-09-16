@@ -17,7 +17,7 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -36,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Set a click listener on that View
         // Code Analysis warns setOnClickListener may produce a null pointer
+        // From the video we had the following code:
+        //     NumbersCLickListener clickListener = new NumbersClickListener():
+        //     numbers.setOnClickListener(clickListener);
+        // Note: The activitymain.xml was modified, so when the 'NumbersView was clicked the listener was fired and the Toast message popped up.
+        // Note the import.widget.Toast was also deleted
+        // Note: the following method was also deleted from MainActivity since it was replace by the toast message
+        //       but the toast message was also replaced, now that we know the listener works.
+        // public void openNumbersActivity (View view) { Intent i = new Intent (this, NumbersActivity.class); startActivty(i); }
+
+
         numbers.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the numbers category is clicked on.
             @Override

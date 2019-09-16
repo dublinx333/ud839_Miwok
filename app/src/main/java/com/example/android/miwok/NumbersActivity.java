@@ -15,7 +15,7 @@
  */
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 //import android.util.Log;
 //import android.view.TextureView;
@@ -36,7 +36,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         /**
          * Replace the word_list layout with the new list_item layout
-         * etContentView(R.layout.word_list);
+         * setContentView(R.layout.word_list);
          * */
 //       setContentView(R.layout.list_item);// replace with line below after refactoring
         setContentView(R.layout.word_list); // see word_list.xml (which has a id of "list"
